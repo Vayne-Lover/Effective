@@ -1,5 +1,5 @@
 #!/usr/local/bin/python
-# -*- coding:utf-8 -*-
+# coding=utf-8
 import sys
 
 def to_unicode(unicode_or_str):
@@ -17,5 +17,5 @@ def to_str(unicode_or_str):
   return v
 
 str='十大'
-#print to_unicode(str)
+print to_str(str)
 print sys.getdefaultencoding()
