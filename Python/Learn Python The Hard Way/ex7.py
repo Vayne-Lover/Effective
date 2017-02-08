@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# You should use python3.
+# Use Python when test Part2.
+# Use Python3 when test Part1.
 
 print("Mary had a small dog.")
 print("Its fleece was white as %s." % 'snow')
@@ -20,5 +21,10 @@ end10 = "g"
 end11 = "e"
 end12 = "r"
 
-print(end1 + end2 + end3 + end4 + end5 + end6,)
-print(end7 + end8 + end9 + end10 + end11 + end12)
+# Part1
+# print(end1 + end2 + end3 + end4 + end5 + end6,)
+# print(end7 + end8 + end9 + end10 + end11 + end12)
+
+# Part2
+print end1 + end2 + end3 + end4 + end5 + end6,
+print end7 + end8 + end9 + end10 + end11 + end12
