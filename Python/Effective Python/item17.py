@@ -1,4 +1,5 @@
-#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+
 def normalize(numbers):
   total=sum(numbers)
   result=[]
@@ -7,6 +8,20 @@ def normalize(numbers):
     result.append(percent)
   return result
 
+def normalize_copy(numbers):
+  num=list(numbers)
+  total=sum(num)
+  result=[]
+  for v in num:
+    percent=100*v/total
+    result.append(percent)
+  return result
+
+
 visits=[15,35,80]
-percentages=normalize(visits)
-print(percentages)
+print("*********")
+percentages1=normalize(visits)
+print(percentages1)
+print("*********")
+percentages2=normalize_copy(visits)
+print(percentages2)
