@@ -47,18 +47,18 @@ class CentralCorridor(Scene):
         print "flowing around his hate filled body.  He's blocking the door to the"
         print "Armory and about to pull a weapon to blast you."
 
-  action=input(">")
+        action=raw_input(">")
 
-  if action == "shoot":
-    print "Quick on the draw you yank out your blaster and fire it at the Gothon."
-    print "His clown costume is flowing and moving around his body, which throws"
-    print "off your aim.  Your laser hits his costume but misses him entirely.  This"
-    print "completely ruins his brand new costume his mother bought him, which"
-    print "makes him fly into an insane rage and blast you repeatedly in the face until"     
-    print "you are dead.  Then he eats you."
-    return 'death'
+        if action == "shoot":
+    	    print "Quick on the draw you yank out your blaster and fire it at the Gothon."
+   	    print "His clown costume is flowing and moving around his body, which throws"
+    	    print "off your aim.  Your laser hits his costume but misses him entirely.  This"
+            print "completely ruins his brand new costume his mother bought him, which"
+    	    print "makes him fly into an insane rage and blast you repeatedly in the face until"     
+            print "you are dead.  Then he eats you."
+    	    return 'death'
 
-  elif action == "dodge!":
+  	elif action == "dodge!":
             print "Like a world class boxer you dodge, weave, slip and slide right"
             print "as the Gothon's blaster cranks a laser past your head."
             print "In the middle of your artful dodge your foot slips and you"
@@ -67,7 +67,7 @@ class CentralCorridor(Scene):
             print "your head and eats you."
             return 'death'
 
-  elif action == "tell a joke":
+  	elif action == "tell a joke":
             print "Lucky for you they made you learn Gothon insults in the academy."
             print "You tell the one Gothon joke you know:"
             print "Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr."
@@ -76,7 +76,7 @@ class CentralCorridor(Scene):
             print "putting him down, then jump through the Weapon Armory door."
             return 'laser_weapon_armory'
 
-  else:
+  	else:
             print "DOES NOT COMPUTE!"
             return 'central_corridor'
 
@@ -91,13 +91,13 @@ class LaserWeaponArmory(Scene):
         print "wrong 10 times then the lock closes forever and you can't"
         print "get the bomb.  The code is 3 digits."
         code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
-        guess = input("[keypad]> ")
+        guess = raw_input("[keypad]> ")
         guesses = 0
 
         while guess != code and guesses < 10:
             print "BZZZZEDDD!"
             guesses += 1
-            guess = input("[keypad]> ")
+            guess = raw_input("[keypad]> ")
 
         if guess == code:
             print "The container clicks open and the seal breaks, letting gas out."
@@ -121,7 +121,7 @@ class TheBridge(Scene):
         print "weapons out yet, as they see the active bomb under your"
         print "arm and don't want to set it off."
 
-        action = input("> ")
+        action = raw_input("> ")
 
         if action == "throw the bomb":
             print "In a panic you throw the bomb at the group of Gothons"
@@ -159,7 +159,7 @@ class EscapePod(Scene):
         print "do you take?"
 
         good_pod = randint(1,5)
-        guess = input("> ")
+        guess = raw_input("> ")
 
 
         if int(guess) != good_pod:
@@ -204,3 +204,8 @@ class Map:
 
     def opening_scene(self):
         return self.next_scene(self.start_scene)
+
+if __name__=="__main__":
+  map=Map("central_corridor")
+  game=Engine(map)
+  game.play()
