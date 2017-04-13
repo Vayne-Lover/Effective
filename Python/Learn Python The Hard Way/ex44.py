@@ -15,6 +15,16 @@ class B(A):
   def override(self):
     print("B!")
 
+class C:
+  def func(self):
+    print("Function in C")
+
+class D(C):
+  def func(self):
+    print("Before D")
+    super(D,self).func()
+    print("After C")
+
 if __name__=="__main__":
   dad=Parent()
   child=Child()
@@ -27,3 +37,9 @@ if __name__=="__main__":
 
   a.override()
   b.override()
+
+  c=C()
+  d=D()
+
+  c.func()
+  d.func()
