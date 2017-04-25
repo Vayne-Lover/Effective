@@ -3,6 +3,7 @@
 __author__="Vayne Lover"
 
 import random
+import time
 
 class Ball(object):
   def __init__(self):
@@ -26,5 +27,7 @@ class Ball(object):
       print("There are {0} numbers in the array {1}.Result is {2:2f}".format(array[i],i,array[i]*1.0/num))
  
 if __name__=="__main__":
+  start_time=time.time()
   ball=Ball()    
-
+  end_time=time.time()
+  print("The program costs {0}".format(end_time-start_time))
